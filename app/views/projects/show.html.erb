@@ -8,8 +8,6 @@
 
       <%= render @project %>
 
-      <%= link_to 'Edit this project', edit_project_path(@project),
-                  class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <% end %>
 
     <h2 class='font-bold my-5 text-xl'>Comments:</h2>
@@ -19,7 +17,9 @@
     </div>
 
     <div id="<%= "#{dom_id(@project)}_comments" %>">
+      <ol>
       <%= render @project.comments.order(created_at: :desc) %>
+      </ol>
     </div>
 
   </div>

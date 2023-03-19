@@ -80,7 +80,7 @@ describe 'Projects', type: :system do
       within('#comments') do
         expect(page).to have_text('First comment')
         expect(page).to have_text("#{user.email}")
-        expect(page).to have_css('a.bg-gray-100', text: 'Edit this comment')
+        expect(page).to have_text('Edit comment')
       end
 
       within('#project_details') do
