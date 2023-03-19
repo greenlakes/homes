@@ -1,0 +1,28 @@
+<div id="<%= dom_id comment %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Content:</strong>
+    <%= comment.content %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Project status:</strong>
+    <%= comment.project_status.humanize %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= comment.user.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Created:</strong>
+    <%= comment.created_at %>
+  </p>
+
+  <%= link_to 'Edit this comment', edit_project_comment_path(comment.project, comment),
+              class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <div class="inline-block ml-2">
+    <%= button_to 'Delete this comment', project_comment_path(comment.project, comment), method: :delete,
+                  class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+  </div>
+</div>

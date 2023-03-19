@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend 'comments', @comment %>
+<% badge_component = render(BadgeComponent.new(status: color_class(@project.status))) {  @project.status  } %>
+<%= turbo_stream.update('project_status', badge_component) %>

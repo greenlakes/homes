@@ -1,0 +1,28 @@
+<div id="<%= dom_id project %>" class="flex gap-24">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= project.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Status:</strong>
+    <span id="project_status">
+      <%= render(BadgeComponent.new(status: color_class(project.status))) do %>
+      <%= project.status.humanize %>
+    <% end %>
+    </span>
+
+  </p>
+
+  <% if action_name != "show" %>
+    <p class="my-5">
+    <%= link_to "Show", project,
+                class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit', edit_project_path(project),
+                class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Delete', project_path(project), data: {turbo_method: :delete},
+                class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+    </p>
+  <% end %>
+</div>

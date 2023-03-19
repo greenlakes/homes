@@ -1,0 +1,11 @@
+<%= button_tag(
+      **options,
+      class: classes,
+      type: button_type,
+      data: {
+        controller: 'button-component--button-component',
+        action: 'click->button-component--button-component#click',
+        button_component__button_component_target: 'button'
+      }.merge(data_options)) do %>
+  <%= content %>
+<% end %>
