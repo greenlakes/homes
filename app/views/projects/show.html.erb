@@ -17,9 +17,7 @@
     </div>
 
     <div id="<%= "#{dom_id(@project)}_comments" %>">
-      <ol>
       <%= render @project.comments.order(created_at: :desc) %>
-      </ol>
     </div>
 
   </div>
