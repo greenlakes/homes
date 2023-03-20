@@ -20,7 +20,9 @@
         <%= comment.created_at.strftime('%Y-%m-%d %H:%M') %>
       </p>
       <p class="mb-2 text-gray-700 text-xs dark:text-gray-200">
-        <%= render(BadgeComponent.new(status: color_class(comment.project_status))) {  comment.project_status  } %>
+        <%= render(BadgeComponent.new(status: color_class(comment.project_status))) do
+          comment.project_status.humanize
+        end %>
       </p>
       <p class="mb-2 text-gray-700 text-xs dark:text-gray-200">
         <%= comment.user.email %>

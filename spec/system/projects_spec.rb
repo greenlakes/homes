@@ -85,7 +85,7 @@ describe 'Projects', type: :system do
 
       within('#project_details') do
         expect(page).to have_text("#{project.name}")
-        expect(page).to have_css('.bg-blue-100', text: 'completed')
+        expect(page).to have_css('.bg-blue-100', text: 'Completed')
       end
 
     end
